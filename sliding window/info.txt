@@ -1,0 +1,3 @@
+Use when:
+count of subarray/substring.
+character's frequencey is being talked about.
