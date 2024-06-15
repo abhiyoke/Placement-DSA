@@ -1,6 +1,9 @@
 //Using sliding window and Bit knowledge
 //T.C : O(n*32)
 //S.C : O(1)
+// a & b <= a ya fir b
+//aur agar piche se element htana h mtlb and jo kiy first k saath usko htana hoga and uske liye freqbits liya jo ki 
+//btata h ki hmne subarray liya h usme each bit pr kitne 1 h.
 class Solution {
 public:
 
