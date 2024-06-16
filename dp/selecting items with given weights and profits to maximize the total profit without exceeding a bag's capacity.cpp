@@ -4,7 +4,7 @@ The knapsack problem involves selecting items with given weights and profits to 
 
 /*
 Let us say we have two bags having capacity c1 anc c2.
-Then formula is: dp[i][j][k]=max(dp[i-1][j][k],dp[i-1][j-w[i]][k],dp[i-1][j][k-w[i]])
+Then formula is: dp[i][j][k]=max(dp[i-1][j][k],p[i]+dp[i-1][j-w[i]][k],p[i]+dp[i-1][j][k-w[i]])
 THen run 3 loops for it.
 */
 
