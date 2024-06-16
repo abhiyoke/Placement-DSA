@@ -2,6 +2,12 @@
 The knapsack problem involves selecting items with given weights and profits to maximize the total profit without exceeding a bag's capacity.
 */
 
+/*
+Let us say we have two bags having capacity c1 anc c2.
+Then formula is: dp[i][j][k]=max(dp[i-1][j][k],dp[i-1][j-w[i]][k],dp[i-1][j][k-w[i]])
+THen run 3 loops for it.
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
