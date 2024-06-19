@@ -16,16 +16,25 @@ public:
 
     int lengthOfLIS(vector<int>& nums) {
       int n=nums.size();
-       vector<int>dp(n,1);
-    int maxi=0;
-    for(int i=0;i<n;i++){
-      for(int prev=0;prev<i;prev++){
-        if(nums[prev]<nums[i]){
-          dp[i]=max(dp[i],1+dp[prev]);
+      vector<vector<int>> dp(n+1,vector<int>(n+1,0));
+    
+    for(int ind = n-1; ind>=0; ind --){
+        for (int prev_index = ind-1; prev_index >=-1; prev_index --){
+            
+            int notTake = 0 + dp[ind+1][prev_index +1];
+    
+            int take = 0;
+    
+            if(prev_index == -1 || nums[ind] > nums[prev_index]){
+                
+                take = 1 + dp[ind+1][ind+1];     //ind+1 is due to +1 state as pre is starting from -1 and there is nothing for it in dp and that's why +1 is there.
+            }
+    
+            dp[ind][prev_index+1] = max(notTake,take);
+            
         }
-      }
-      maxi=max(maxi,dp[i]);
     }
-    return maxi;
+    
+    return dp[0][0];
     }
 };
