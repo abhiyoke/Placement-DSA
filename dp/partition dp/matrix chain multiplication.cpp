@@ -3,6 +3,8 @@ Given a sequence of matrices, find the most efficient way to multiply these matr
 of multiplications.
 The dimensions of the matrices are given in an array arr[] of size N (such that N = number of matrices + 1) where the ith matrix has the dimensions (arr[i-1] x arr[i]).
   */
+//Time Complexity: O(N*N*N)
+//Space Complexity: O(N*N) + O(N)
 
 class Solution{
 public:
