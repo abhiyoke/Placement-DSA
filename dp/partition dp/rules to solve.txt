@@ -1,0 +1,5 @@
+Rules to solve the problem of partition DP:
+
+Start with the entire block/array and mark it with i,j. We need to find the value of f(i,j).
+Try all partitions.
+Run the best possible answer of the two partitions ( answer that comes after dividing the problem into two subproblems and solving them recursively).
