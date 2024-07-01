@@ -1,0 +1,12 @@
+1.
+File System:
+Basic Concept: Data ko files mein store karta hai.
+Data Management: Manual management, high redundancy aur inconsistency.
+Data Access: Slow access due to manual searching.
+Security: Limited security, manual protection.
+  
+DBMS:
+Basic Concept: Systematic data storage in tables.
+Data Management: Automatic management, low redundancy aur inconsistency.
+Data Access: Fast access using SQL queries.
+Security: High-level security with user authentication aur authorization.
