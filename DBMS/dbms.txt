@@ -47,7 +47,7 @@ Example: Student (Roll Number), Book (ISBN).
      Weak Entity:
 Definition: Incomplete and cannot be uniquely identified without a strong entity.
 Characteristics: No primary key, but has partial key, dependent on strong entity.
-Example: Dependent (Employee ID + Dependent Name), Order Item (Order Number + Item Number).
+Example: Dependent (Employee ID + Dependent Name), Order Item (Order Number + Item Number).  //Dependent are family members of emp.
     Diagram Explanation:
 Strong Entity: Rectangle with underlined primary key.
 Weak Entity: Double rectangle with dashed partial key.
