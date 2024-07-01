@@ -4,9 +4,19 @@ Basic Concept: Data ko files mein store karta hai.
 Data Management: Manual management, high redundancy aur inconsistency.
 Data Access: Slow access due to manual searching.
 Security: Limited security, manual protection.
-  
 DBMS:
 Basic Concept: Systematic data storage in tables.
 Data Management: Automatic management, low redundancy aur inconsistency.
 Data Access: Fast access using SQL queries.
 Security: High-level security with user authentication aur authorization.
+
+2.ER model:
+Entity: Real-world object (e.g., Student, Book).
+Attributes: Characteristics of an entity (e.g., Name, Age).
+Relationships: Connections between entities (e.g., Student borrows Book).
+Diagram Components:
+Rectangle: Entity.
+Ellipse: Attribute.
+Diamond: Relationship.
+Lines: Connections.
+ER Model se hum complex database designs ko easily visualize kar sakte hain aur relationships ko samajh sakte hain.
