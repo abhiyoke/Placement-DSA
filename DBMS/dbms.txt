@@ -28,14 +28,27 @@ Multivalued Attribute: Can have multiple values (e.g., Phone Numbers).
 Derived Attribute: Calculated from other attributes (e.g., Age).
 Key Attribute: Uniquely identifies the entity (e.g., Roll Number).
 
-4.Degree of Relationship:
+4.    Degree of Relationship:
 Unary: Relationship with itself (e.g., Employee supervises Employee).
 Binary: Relationship between two entities (e.g., Student enrolls in Course).
 N-ary: Relationship among multiple entities (e.g., Doctor treats Patient in Hospital).
-Cardinality:
+    Cardinality:
 One to One (1:1): One entity to one entity (e.g., Person has Passport).
 One to Many (1:M): One entity to multiple entities (e.g., Teacher teaches Students).
 Many to Many (M:M): Multiple entities to multiple entities (e.g., Student enrolls in Courses).
-Participation:
+   Participation:
 Total Participation: All entities must participate (e.g., All Students enroll in at least one Course).
 Partial Participation: Some entities participate (e.g., Some Employees have Parking Spots).
+
+5.   Strong Entity:
+Definition: Complete and can be uniquely identified independently.
+Characteristics: Has primary key, not dependent on any other entity.
+Example: Student (Roll Number), Book (ISBN).
+     Weak Entity:
+Definition: Incomplete and cannot be uniquely identified without a strong entity.
+Characteristics: No primary key, but has partial key, dependent on strong entity.
+Example: Dependent (Employee ID + Dependent Name), Order Item (Order Number + Item Number).
+    Diagram Explanation:
+Strong Entity: Rectangle with underlined primary key.
+Weak Entity: Double rectangle with dashed partial key.
+Relationship: Diamond connecting weak entity to strong entity, with double lines indicating total participation.
