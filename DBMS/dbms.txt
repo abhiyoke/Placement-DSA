@@ -27,3 +27,15 @@ Composite Attribute: Can be divided into sub-parts (e.g., Full Name).
 Multivalued Attribute: Can have multiple values (e.g., Phone Numbers).
 Derived Attribute: Calculated from other attributes (e.g., Age).
 Key Attribute: Uniquely identifies the entity (e.g., Roll Number).
+
+4.Degree of Relationship:
+Unary: Relationship with itself (e.g., Employee supervises Employee).
+Binary: Relationship between two entities (e.g., Student enrolls in Course).
+N-ary: Relationship among multiple entities (e.g., Doctor treats Patient in Hospital).
+Cardinality:
+One to One (1:1): One entity to one entity (e.g., Person has Passport).
+One to Many (1:M): One entity to multiple entities (e.g., Teacher teaches Students).
+Many to Many (M:M): Multiple entities to multiple entities (e.g., Student enrolls in Courses).
+Participation:
+Total Participation: All entities must participate (e.g., All Students enroll in at least one Course).
+Partial Participation: Some entities participate (e.g., Some Employees have Parking Spots).
