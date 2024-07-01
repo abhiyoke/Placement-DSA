@@ -22,18 +22,8 @@ Lines: Connections.
 ER Model se hum complex database designs ko easily visualize kar sakte hain aur relationships ko samajh sakte hain.
 
 3.Types of Attributes
-Simple Attribute:
-Yeh wo attributes hote hain jo further divide nahi ho sakte.
-Example: Roll Number, Age.
-Composite Attribute:
-Yeh attributes further divide ho sakte hain multiple sub-parts mein.
-Example: Full Name (First Name aur Last Name), Address (Street, City, Zip Code).
-Multivalued Attribute:
-Yeh attributes multiple values hold kar sakte hain.
-Example: Phone Numbers (ek person ke paas ek se zyada phone numbers ho sakte hain), Email Addresses.
-Derived Attribute:
-Yeh attributes calculate kiye jaate hain doosre attributes ke basis par.
-Example: Age (jo Date of Birth se calculate hoti hai), Total Marks (jo individual marks se calculate hota hai).
-Key Attribute:
-Yeh attribute entity ko uniquely identify karta hai.
-Example: Roll Number for Student, Employee ID for Employee.
+Simple Attribute: Cannot be divided (e.g., Roll Number).
+Composite Attribute: Can be divided into sub-parts (e.g., Full Name).
+Multivalued Attribute: Can have multiple values (e.g., Phone Numbers).
+Derived Attribute: Calculated from other attributes (e.g., Age).
+Key Attribute: Uniquely identifies the entity (e.g., Roll Number).
