@@ -11,6 +11,8 @@ select * from amazon_orders
 order by order_date desc,product_name desc,payment_method;
 
 5.insert into amazon_orders values(3,'2022-10-01','Baby cream',30.5,'UPI');
+insert into a_orders(order_id,order_date,product_name,total_price,payment_method) 
+values(7,'2022-10-01','Shirts',132.5,'UPI');
 
 6.--change data type of a column
 alter table amazon_orders alter column order_date datetime; --DDL
