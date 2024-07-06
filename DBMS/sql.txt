@@ -1,3 +1,16 @@
 1.total_price decimal(6,2),
 
+2.--to delete data
+delete from amazon_orders;
+
+3.--limiting rows
+select top 1 * from amazon_orders;
+
+4.--data sorting
+select * from amazon_orders
+order by order_date desc,product_name desc,payment_method;
+
+5.insert into amazon_orders values(3,'2022-10-01','Baby cream',30.5,'UPI');
+
+
 
