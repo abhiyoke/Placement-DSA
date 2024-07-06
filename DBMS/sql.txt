@@ -15,5 +15,9 @@ order by order_date desc,product_name desc,payment_method;
 6.--change data type of a column
 alter table amazon_orders alter column order_date datetime; --DDL
 
+7.payment_method varchar(20) check (payment_method in ('UPI','CREDIT CARD')) default 'UPI', --check constraint
+discount integer check (discount<=20) , --check constraint,
+category varchar(20) default 'Mens Wear' --default constarint
+
 
 
