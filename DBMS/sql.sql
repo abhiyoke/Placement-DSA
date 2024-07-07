@@ -42,5 +42,11 @@ select e.name,b.bonus from Employee e left join Bonus b on e.empId=b.empId where
  Imagine you have a table with employee information, and some employees don't have a middle name recorded.
 SELECT  employee_id, first_name, COALESCE(middle_name, 'N/A') AS middle_name, last_nameFROM  Employees;
 
+12.cross join:tb krte h jb hme do table sare columns chahiye hote h.
+ select s.student_id,s.student_name,sub.subject_name,count(e.subject_name) as attended_exams from 
+Students s cross join Subjects sub left join Examinations e on s.student_id=e.student_id and
+sub.subject_name=e.subject_name group 
+by s.student_id,s.student_name,sub.subject_name order by s.student_id,s.student_name; 
+
 
 
