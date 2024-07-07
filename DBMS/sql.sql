@@ -48,5 +48,17 @@ Students s cross join Subjects sub left join Examinations e on s.student_id=e.st
 sub.subject_name=e.subject_name group 
 by s.student_id,s.student_name,sub.subject_name order by s.student_id,s.student_name; 
 
+13.SELECT 
+    s.user_id, 
+    ROUND(avg(if(c.action = 'confirmed',1,0)), 2) AS confirmation_rate
+FROM 
+    Signups s 
+LEFT JOIN 
+    Confirmations c 
+ON 
+    s.user_id = c.user_id 
+GROUP BY 
+    s.user_id;
+
 
 
