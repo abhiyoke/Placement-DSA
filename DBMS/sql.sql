@@ -37,5 +37,10 @@ and a2.activity_type='end'
 10. is null:
 select e.name,b.bonus from Employee e left join Bonus b on e.empId=b.empId where b.bonus<1000 or bonus is null  order by e.empId;
 
+11.COALESCE is a function that returns the first non-null value from a list of expressions. It's commonly used to handle NULL values by providing a 
+ default value when a NULL is encountered.
+ Imagine you have a table with employee information, and some employees don't have a middle name recorded.
+SELECT  employee_id, first_name, COALESCE(middle_name, 'N/A') AS middle_name, last_nameFROM  Employees;
+
 
 
