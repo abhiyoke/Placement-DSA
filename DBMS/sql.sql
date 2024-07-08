@@ -60,5 +60,7 @@ ON
 GROUP BY 
     s.user_id;
 
+14.The ISNULL() function in SQL is used to replace NULL values with a specified replacement value.syntax:ISNULL(expression, replacement_value).
+
 
 
