@@ -61,6 +61,8 @@ GROUP BY
     s.user_id;
 
 14.The ISNULL() function in SQL is used to replace NULL values with a specified replacement value.syntax:ISNULL(expression, replacement_value).
+ SELECT p.product_id, IFNULL(round(SUM(p.price*u.units)/sum(u.units),2),0) as average_price FROM Prices p LEFT JOIN UnitsSold u
+ON p.product_id = u.product_id AND  u.purchase_date BETWEEN p.Start_date and p.end_date GROUP BY p.product_id
 
 
 
