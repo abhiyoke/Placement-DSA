@@ -68,4 +68,9 @@ ON p.product_id = u.product_id AND  u.purchase_date BETWEEN p.Start_date and p.e
 select contest_id,round(count(distinct user_id)*100/(select count(user_id)from Users),2) as percentage from Register group by contest_id 
  order by percentage desc,contest_id ;
 
+16.the SUBSTR (or SUBSTRING) function is used to extract a portion of a string. It's like cutting out a specific part of the text from a longer piece of text.
+SUBSTR(string, start_position, length)
+string: The text you want to cut from.
+start_position: The position in the text where you want to start cutting.
+length (optional): How many characters you want to cut out. If omitted, it will cut everything from the start position to the end of the string.
 
