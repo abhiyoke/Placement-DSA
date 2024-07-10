@@ -74,9 +74,14 @@ string: The text you want to cut from.
 start_position: The position in the text where you want to start cutting.
 length (optional): How many characters you want to cut out. If omitted, it will cut everything from the start position to the end of the string.
 
- 17.DATE_SUB function in SQL is used to subtract a specified time interval from a date. This function is often used to calculate dates in the past relative to a given date. The syntax for DATE_SUB is as follows:
+17.DATE_SUB function in SQL is used to subtract a specified time interval from a date. This function is often used to calculate dates in the past relative to a given date. The syntax for DATE_SUB is as follows:
 DATE_SUB(date, INTERVAL expr unit)
 date: The starting date from which the interval will be subtracted.
 expr: The number of units of time to subtract.
 unit: The unit of time, such as DAY, MONTH, YEAR, etc.Ex:SELECT * FROM orders WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);
+
+18.count can't be added in where and can only added in starting or in having.
+ select class from Courses  group by class having count(student)>=5;
+
+ 
 
