@@ -144,3 +144,20 @@ SELECT
 FROM Accounts
 WHERE income > 50000;
 
+25.CASE 
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    ...
+    ELSE resultN
+END
+ex:select case 
+        when 
+        id = (select max(id) from Seat) and mod(id,2)=1
+        then id
+        when
+            mod(id,2)=1
+            then id+1
+            else id-1
+        end as id,student
+    from Seat order by id;
+
