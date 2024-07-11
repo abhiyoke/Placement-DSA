@@ -93,3 +93,15 @@ having count(employee_id)=1
 LAG Function: Fetches the value from the previous row in the result set.
  SELECT  employee_id, salary,  LAG(salary, 1) OVER (ORDER BY employee_id) AS previous_salaryFROM employees;
 
+21.Common Table Expression (CTE)
+Explanation: A Common Table Expression (CTE) is a temporary result set in SQL that you can reference within a SELECT, INSERT, UPDATE, or DELETE statement. 
+ It's like creating a temporary table that exists only for the duration of a query.
+ WITH cte_name AS (
+    SELECT column1, column2, ...
+    FROM table_name
+    WHERE condition
+)
+SELECT column1, column2, ...
+FROM cte_name
+WHERE condition;
+
