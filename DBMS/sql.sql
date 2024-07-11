@@ -99,7 +99,7 @@ LAG Function: Fetches the value from the previous row in the result set.
 
 21.Common Table Expression (CTE)
 Explanation: A Common Table Expression (CTE) is a temporary result set in SQL that you can reference within a SELECT, INSERT, UPDATE, or DELETE statement. 
- It's like creating a temporary table that exists only for the duration of a query.
+ Its like creating a temporary table that exists only for the duration of a query.
  WITH cte_name AS (
     SELECT column1, column2, ...
     FROM table_name
@@ -115,4 +115,14 @@ FROM Logs l1
 JOIN Logs l2 ON l1.id = l2.id - 1
 JOIN Logs l3 ON l1.id = l3.id - 2
 WHERE l1.num = l2.num AND l2.num = l3.num;
+
+23.calculate sum by adding each row:
+WITH OrderedQueue AS (
+    SELECT
+        person_name,
+        weight,
+        SUM(weight) OVER (ORDER BY turn) AS cumulative_weight
+    FROM
+        Queue
+)
 
