@@ -6,6 +6,9 @@ delete from amazon_orders;
 3.--limiting rows
 select top 1 * from amazon_orders;
 
+SELECT * FROM Employees
+LIMIT 5;
+
 4.--data sorting
 select * from amazon_orders
 order by order_date desc,product_name desc,payment_method;
