@@ -83,5 +83,10 @@ unit: The unit of time, such as DAY, MONTH, YEAR, etc.Ex:SELECT * FROM orders WH
 18.count can't be added in where and can only added in starting or in having.
  select class from Courses  group by class having count(student)>=5;
 
+19.UNION operator in SQL combines the results of two or more SELECT statements into a single result set.
+ Each SELECT statement must have the same number of columns, with matching data types in the same order.
+ select employee_id,department_id from Employee  where primary_flag='Y' union select employee_id,department_id from Employee group by employee_id
+having count(employee_id)=1
+
  
 
