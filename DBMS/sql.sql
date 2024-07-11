@@ -87,6 +87,7 @@ unit: The unit of time, such as DAY, MONTH, YEAR, etc.Ex:SELECT * FROM orders WH
  Each SELECT statement must have the same number of columns, with matching data types in the same order.
  select employee_id,department_id from Employee  where primary_flag='Y' union select employee_id,department_id from Employee group by employee_id
 having count(employee_id)=1
+ union tb use hota h jb mainly kuch row bach rhe h cover krne ko.
 
 20.LEAD Function:Fetches the value from the next row in the result set.
  SELECT employee_id, salary, LEAD(salary, 1) OVER (ORDER BY employee_id) AS next_salary FROM employees;
