@@ -161,3 +161,10 @@ ex:select case
         end as id,student
     from Seat order by id;
 
+26.List students who have never received a grade below 'B'
+ SELECT s.student_id, s.name FROM STUDENT s
+WHERE NOT EXISTS (SELECT 1 FROM ENROLLMENT e
+    JOIN GRADE g ON e.enrollment_id = g.enrollment_id
+    WHERE e.student_id = s.student_id AND g.grade IN ('C', 'D', 'F')
+);
+
