@@ -1,0 +1,23 @@
+Infix Notation
+Infix notation is the common arithmetic and logical formula notation, where operators are placed between operands.
+Example:
+Expression: A + B
+Infix: A + B
+
+Prefix Notation (Polish Notation)
+In prefix notation, the operator is placed before the operands. This notation doesn't require parentheses because the order of operations is always clear.
+Example:
+Expression: A + B
+Prefix: + A B
+
+Postfix Notation (Reverse Polish Notation)
+In postfix notation, the operator is placed after the operands. Like prefix notation, this also doesn't require parentheses because the order of operations is
+always clear.
+Example:
+Expression: A + B
+Postfix: A B +
+
+prirorty:	
+Power: ^
+Multiplicative	* / %	Left to Right
+Additive	+ -	Left to Right
