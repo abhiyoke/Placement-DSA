@@ -52,3 +52,50 @@ void insertAtMiddle(Node*& head, int newData, int position) {
     temp->next = newNode;  //imp
 }
 
+//delete a node:
+void deleteFromBeginning(Node*& head) {
+    if (head == nullptr) return; // If the list is empty, nothing to delete
+
+    Node* temp = head;
+    head = head->next;
+    delete temp;
+}
+void deleteFromEnd(Node*& head) {
+    if (head == nullptr) return; // If the list is empty, nothing to delete
+    if (head->next == nullptr) { // If there is only one element in the list
+        delete head;
+        head = nullptr;
+        return;
+    }
+    Node* temp = head;
+    while (temp->next->next != nullptr) {
+        temp = temp->next;
+    }
+    delete temp->next;
+    temp->next = nullptr;
+}
+void deleteFromMiddle(Node*& head, int position) {
+    if (head == nullptr) return; // If the list is empty, nothing to delete
+
+    if (position == 1) {
+        deleteFromBeginning(head);
+        return;
+    }
+    Node* temp = head;
+    for (int i = 1; i < position - 1 && temp->next != nullptr; ++i) {
+        temp = temp->next;
+    }
+    if (temp->next == nullptr) {
+        cout << "Position out of range" << endl;
+        return;
+    }
+   if(temp->next->next==nullptr) {
+    deleteFromEnd(head);
+   }
+   else{
+     Node* nodeToDelete = temp->next;
+     temp->next=temp->next->next;
+   delete nodeToDelete;
+   }
+}
+
