@@ -143,7 +143,18 @@ Node* reverseDLL(Node* head){
      temp = temp->next;
     }
     return head;
-
 }
-
+//link exchange:
+Node* reverseDLL(Node* head) {
+    if (head == NULL || head->next == NULL) {
+        return head; 
+    }
+    Node* prev = NULL;  
+    Node* current = head;   
+    while (current != NULL) {
+        prev = current->back;   // Store a reference to the previous node
+        current->back = current->next;   // Swap the previous and next pointers
+          current->next = prev;      // This step reverses the links
+       current = current->back;  // Move to the next node in the original list 
+    } return prev->back;}
 
