@@ -169,4 +169,16 @@ Node *findMiddle(Node *head) {
     return slow; 
 }
 
+//reverse LL:
+  ListNode* prev=nullptr;
+        ListNode* curr=head;
+        while(curr!=nullptr){
+            ListNode* t=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=t;
+        }
+        return prev;
+    }
+
 
