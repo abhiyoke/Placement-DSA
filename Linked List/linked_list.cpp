@@ -187,4 +187,7 @@ in middle func:in while loop at end just include if(slow==fast) return true;
 //starting point of LL:
 if(slow==fast) { then just make slow =head and just use while(slow!=fast){ s=s->next,f=f->next} return slow} return nullptr;
 
+//length of loop in LL:
+if(slow==fast){fast=fast->n, c=1,while(slow!=fast){slow=slow->n,c++} ret c;
+
 
