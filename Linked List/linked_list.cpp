@@ -181,4 +181,7 @@ Node *findMiddle(Node *head) {
         return prev;
     }
 
+//detect cycle/loop in LL:
+in middle func:in while loop at end just include if(slow==fast) return true;
+
 
