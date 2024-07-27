@@ -99,3 +99,29 @@ void deleteFromMiddle(Node*& head, int position) {
    }
 }
 
+//delete node in double LL at kth index:
+void deleteAtIndex(Node*& head, int k) {
+    if (head == nullptr) return; // If the list is empty
+    Node* current = head;
+    if (k == 0) {  // Special case for the first node
+        head = head->next;
+        if (head != nullptr) {
+            head->prev = nullptr;
+        }
+        delete current;
+        return;
+    }
+    int index = 0;
+    while (current != nullptr && index < k) {
+        current = current->next;
+        index++;
+    }
+    if (current == nullptr) {
+        cout << "Index out of range" << endl;
+        return;
+  }
+    if (current->prev != nullptr) current->prev->next = current->next;
+    if (current->next != nullptr)  current->next->prev = current->prev; 
+    delete current;
+}
+
