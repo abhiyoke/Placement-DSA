@@ -379,6 +379,20 @@ Node* deleteAllOccurrences(Node* head, int k) {
             else tail=tail->prev;
         }return ans;}
 
+//remove duplicates in sorted DLL:
+ Node * removeDuplicates(struct Node *head)
+    {Node* temp=head;
+        while(temp!=nullptr && temp->next!=nullptr){
+            Node* nextNode=temp->next;
+            while(nextNode!=nullptr && nextNode->data==temp->data){
+                Node* duplicate=nextNode;
+                nextNode=nextNode->next;
+                free(duplicate);   }
+            temp->next=nextNode;
+            if(nextNode!=nullptr) nextNode->prev=temp;
+            temp=temp->next;
+        } return head; }
+
 
 
 
