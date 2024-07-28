@@ -245,14 +245,38 @@ ListNode* removeNthFromEnd(ListNode* head, int K) {
         return head->next;
         while(fast->next!=nullptr){
             slow=slow->next;
-            fast=fast->next;
-        }
+            fast=fast->next;  }
         ListNode* delNode=slow->next;
         slow->next=slow->next->next;
         delete delNode;
-        return head;
-    
+        return head;  }
+
+//sort the LL:
+Node* mergeTwoSortedLinkedLists(Node* list1, Node* list2) {
+    Node* dummyNode = new Node(-1);
+    Node* temp = dummyNode;
+    while (list1 != nullptr && list2 != nullptr) {
+        if (list1->data <= list2->data) {
+            temp->next = list1;
+            list1 = list1->next;
+        } else {
+            temp->next = list2;
+            list2 = list2->next;
+        }
+        temp = temp->next; 
     }
+    if (list1 != nullptr)  temp->next = list1;
+        else temp->next = list2;
+        return dummyNode->next;}
+Node* sortLL(Node* head) {
+    if (head == nullptr || head->next == nullptr) return head;
+    Node* middle = findMiddle(head);
+     Node* right = middle->next;
+    middle->next = nullptr;
+    Node* left = head;
+     left = sortLL(left);
+    right = sortLL(right);
+    return mergeTwoSortedLinkedLists(left, right);}
 
 
 
