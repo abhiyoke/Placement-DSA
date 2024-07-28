@@ -278,6 +278,17 @@ Node* sortLL(Node* head) {
     right = sortLL(right);
     return mergeTwoSortedLinkedLists(left, right);}
 
+//intersection of two LL
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        unordered_set<ListNode*>st;
+        while(headA!=nullptr){
+            st.insert(headA);
+            headA=headA->next;  }
+        while(headB!=nullptr){
+            if(st.find(headB)!=st.end()) return headB;
+            headB=headB->next; }
+        return nullptr;    }
+
 
 
 
