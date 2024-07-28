@@ -217,4 +217,24 @@ bool isPalindrome(ListNode* head) {
 //length of loop in LL:
 if(slow==fast){fast=fast->n, c=1,while(slow!=fast){slow=slow->n,c++} ret c;
 
+//segregate odd even indice LL:
+ListNode* oddEvenList(ListNode* head) {
+          if (head == nullptr || head->next == nullptr) {
+            return head; // Empty list or single node, return as it is
+        }
+        ListNode* odd=head;
+        ListNode* even=head->next;
+         ListNode* evenHead=head->next;
+       while(even!=nullptr && even->next!=nullptr){
+           odd->next=odd->next->next;
+           even->next=even->next->next;
+           odd=odd->next;
+           even=even->next;
+       }
+       odd->next=evenHead;
+       return head;
+    }
+
+
+
 
