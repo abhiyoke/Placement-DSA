@@ -329,6 +329,56 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     }
     return dummy->next; }
 
+//delete all occ. of K:
+Node* deleteAllOccurrences(Node* head, int k) {
+    Node* temp = head;
+    while (temp != nullptr) {
+        if (temp->data == k) {
+            // If this node is the head of the list
+            if (temp == head) {
+                head = temp->next;
+                if (head != nullptr) {
+                    head->prev = nullptr;
+                }
+                Node* toDelete = temp;
+                temp = temp->next;
+                delete toDelete;
+            } else {
+                Node* nextNode = temp->next;
+                Node* prevNode = temp->prev;
+                if (nextNode != nullptr) {
+                    nextNode->prev = prevNode;
+                }
+                if (prevNode != nullptr) {
+                    prevNode->next = nextNode;
+                }
+                Node* toDelete = temp;
+                temp = temp->next;
+                delete toDelete;
+            }
+        } else {
+            temp = temp->next;
+        }
+    }
+    return head;
+}
+
+//Find pairs with given sum in doubly linked list
+ vector<pair<int, int>> findPairsWithGivenSum(Node *head, int target)
+    { vector<pair<int, int>>ans;
+        Node* tail=findtail(head); Node* first=head;
+        while(first->data<tail->data){
+            if(first->data+tail->data==target){
+                ans.push_back({first->data,tail->data});
+                first=first->next;
+                tail=tail->prev;
+            }
+            else if(first->data+tail->data<target){
+                first=first->next;
+            }
+            else tail=tail->prev;
+        }return ans;}
+
 
 
 
