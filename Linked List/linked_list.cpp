@@ -166,8 +166,9 @@ Node *findMiddle(Node *head) {
         slow = slow->next; 
         fast = fast->next->next; 
     }
-    return slow; 
+    return slow; //to delete middle ele,just replace these with s->n=s->n->n,ret head
 }
+
 
 //reverse LL:
   ListNode* prev=nullptr;
