@@ -235,6 +235,24 @@ ListNode* oddEvenList(ListNode* head) {
        return head;
     }
 
+//delete nth node from end:
+ListNode* removeNthFromEnd(ListNode* head, int K) {
+        ListNode* fast=head;
+        for(int i=0;i<K;i++) fast=fast->next;
+        ListNode* slow=head;
+           if (fast == NULL)
+        return head->next;
+        while(fast->next!=nullptr){
+            slow=slow->next;
+            fast=fast->next;
+        }
+        ListNode* delNode=slow->next;
+        slow->next=slow->next->next;
+        delete delNode;
+        return head;
+    
+    }
+
 
 
 
