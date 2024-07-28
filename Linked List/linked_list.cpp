@@ -305,6 +305,30 @@ Node* addOne(Node* head){
         head=newNode;}
     return head;}
 
+//Add 2 no. in LL given in rev order:
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        ListNode* t = l1;  ListNode* t1 = l2;
+        ListNode* dummy=new ListNode(-1);
+       int carry=0;
+        ListNode* curr=dummy;
+        while (t != nullptr || t1 != nullptr) {
+            int sum=0;
+            sum=carry;
+            if(t!=nullptr) sum+=t->val;
+            if(t1!=nullptr) sum+=t1->val;
+            ListNode* node=new ListNode(sum%10);
+            carry=sum/10;
+            curr->next=node;
+            curr=node;
+            if(t!=nullptr) t=t->next;
+            if(t1!=nullptr) t1=t1->next;
+    }
+    if(carry){
+        ListNode* node=new ListNode(carry);
+        curr->next=node;
+    }
+    return dummy->next; }
+
 
 
 
