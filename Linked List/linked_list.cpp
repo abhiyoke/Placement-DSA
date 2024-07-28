@@ -187,6 +187,33 @@ in middle func:in while loop at end just include if(slow==fast) return true;
 //starting point of LL:
 if(slow==fast) { then just make slow =head and just use while(slow!=fast){ s=s->next,f=f->next} return slow} return nullptr;
 
+//check palindrome in LL:can be check by stack by t->d==st.top().Or by finding middle ele,then reverseLL from slow->next and call these node as newH,then f=head,
+//s=newH.THen in while loop check (s->d==f->d) and if not just reverseLL(newH).
+bool isPalindrome(ListNode* head) {
+         if (head == NULL || head->next == NULL) {   
+        return true; 
+    }
+    ListNode* fast=head;
+    ListNode* slow=head;
+    while(fast->next!=nullptr && fast->next->next!=nullptr){
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+    ListNode* newHead=reverseLL(slow->next);
+    ListNode* first=head;
+    ListNode* second=newHead;
+    while(second!=nullptr){
+        if(first->val != second->val){
+            reverseLL(newHead);
+            return false;
+        }
+        first=first->next;
+        second=second->next;
+    }
+    reverseLL(newHead);
+    return true;
+    }
+
 //length of loop in LL:
 if(slow==fast){fast=fast->n, c=1,while(slow!=fast){slow=slow->n,c++} ret c;
 
