@@ -216,3 +216,73 @@ void shortest_distance(vector<vector<int>>&matrix) {
 			}
 		}
 	}
+
+\\dijktra's algo
+ctor<int> dijkstra(int V, vector<vector<int>> adj[], int S)
+    {
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+        vector<int> distTo(V, INT_MAX);
+
+        // Source initialised with dist=0.
+        distTo[S] = 0;
+        pq.push({0, S});
+
+        // Now, pop the minimum distance node first from the min-heap
+        // and traverse for all its adjacent nodes.
+        while (!pq.empty())
+        {
+            int node = pq.top().second;
+            int dis = pq.top().first;
+            pq.pop();
+
+            // Check for all adjacent nodes of the popped out
+            // element whether the prev dist is larger than current or not.
+            for (auto it : adj[node])
+            {
+                int v = it[0];
+                int w = it[1];
+                if (dis + w < distTo[v])
+                {
+                    distTo[v] = dis + w;
+    
+                    // If current distance is smaller,
+                    // push it into the queue.
+                    pq.push({dis + w, v});
+                }
+            }
+        }
+        // Return the list containing shortest distances
+        // from source to all the nodes.
+        return distTo;
+    }
+
+//prims algo
+	int spanningTree(int V, vector<vector<int>> adj[])
+	{
+		priority_queue<pair<int, int>,
+		               vector<pair<int, int> >, greater<pair<int, int>>> pq;
+
+		vector<int> vis(V, 0);
+		// {wt, node}
+		pq.push({0, 0});
+		int sum = 0;
+		while (!pq.empty()) {
+			auto it = pq.top();
+			pq.pop();
+			int node = it.second;
+			int wt = it.first;
+
+			if (vis[node] == 1) continue;
+			// add it to the mst
+			vis[node] = 1;
+			sum += wt;
+			for (auto it : adj[node]) {
+				int adjNode = it[0];
+				int edW = it[1];
+				if (!vis[adjNode]) {
+					pq.push({edW, adjNode});
+				}
+			}
+		}
+		return sum;
+	}
