@@ -133,3 +133,86 @@ bool dfsCheck(int node, vector<int> adj[], int vis[], int pathVis[]) {
 		}
 		return false;
 	}
+
+//toposort:
+	void dfs(int node, int vis[], stack<int> &st,
+	         vector<int> adj[]) {
+		vis[node] = 1;
+		for (auto it : adj[node]) {
+			if (!vis[it]) dfs(it, vis, st, adj);
+		}
+		st.push(node);
+	}
+	vector<int> topoSort(int V, vector<int> adj[])
+	{
+		int vis[V] = {0};
+		stack<int> st;
+		for (int i = 0; i < V; i++) {
+			if (!vis[i]) {
+				dfs(i, vis, st, adj);
+			}
+		}
+
+		vector<int> ans;
+		while (!st.empty()) {
+			ans.push_back(st.top());
+			st.pop();
+		}
+		return ans;
+	}
+
+//bellman ford:
+	vector<int> bellman_ford(int V, vector<vector<int>>& edges, int S) {
+		vector<int> dist(V, 1e8);
+		dist[S] = 0;
+		for (int i = 0; i < V - 1; i++) {
+			for (auto it : edges) {
+				int u = it[0];
+				int v = it[1];
+				int wt = it[2];
+				if (dist[u] != 1e8 && dist[u] + wt < dist[v]) {
+					dist[v] = dist[u] + wt;
+				}
+			}
+		}
+		// Nth relaxation to check negative cycle
+		for (auto it : edges) {
+			int u = it[0];
+			int v = it[1];
+			int wt = it[2];
+			if (dist[u] != 1e8 && dist[u] + wt < dist[v]) {
+				return { -1};
+			}
+		}
+
+
+		return dist;
+	}
+
+//floyd warshall:
+void shortest_distance(vector<vector<int>>&matrix) {
+		int n = matrix.size();
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				if (matrix[i][j] == -1) {
+					matrix[i][j] = 1e9;
+				}
+				if (i == j) matrix[i][j] = 0;
+			}
+		}
+		for (int k = 0; k < n; k++) {
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n; j++) {
+					matrix[i][j] = min(matrix[i][j],
+					                   matrix[i][k] + matrix[k][j]);
+				}
+			}
+		}
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				if (matrix[i][j] == 1e9) {
+					matrix[i][j] = -1;
+				}
+			}
+		}
+	}
