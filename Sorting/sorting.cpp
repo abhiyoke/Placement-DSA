@@ -74,5 +74,6 @@ void mergeSort(vector<int> &arr, int low, int high) {
     mergeSort(arr, mid + 1, high); // right half
     merge(arr, low, mid, high);  // merging sorted halves
 }
+int main(){  mergeSort(arr, 0, n - 1);}
 
 
