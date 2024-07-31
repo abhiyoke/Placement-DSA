@@ -1,3 +1,11 @@
+ 	             Best	Average	Worst	        Worst
+Selection Sort	O(n2)	O(n2)	O(n2)	        O(1)
+Bubble Sort	    O(n)	O(n2)	O(n2)	            O(1)
+Insertion Sort	O(n)	O(n2)	O(n2)	         O(1)
+Heap Sort	O(n log(n))	O(n log(n))	O(n log(n))	  O(1)
+Quick Sort	O(n log(n))	O(n log(n))	O(n2)	      O(n)
+Merge Sort	O(n log(n))	O(n log(n))	O(n log(n))	   O(n)
+
 void insertionSort(vector<int>& arr) {
     int n = arr.size();
     for (int i = 1; i < n; i++) {
@@ -104,10 +112,47 @@ void qs(vector<int> &arr, int low, int high) {
         qs(arr, pIndex + 1, high);
     }
 }
-
 vector<int> quickSort(vector<int> arr) {
     qs(arr, 0, arr.size() - 1);
     return arr;
+}
+
+//heap sort
+void heapify(vector<int>& arr, int n, int i) {
+    int largest = i;   // Initialize largest as root
+    int left = 2 * i + 1;   // left child index
+    int right = 2 * i + 2;  // right child index
+
+    // If left child is larger than root
+    if (left < n && arr[left] > arr[largest])
+        largest = left;
+
+    // If right child is larger than largest so far
+    if (right < n && arr[right] > arr[largest])
+        largest = right;
+
+    // If largest is not root
+    if (largest != i) {
+        swap(arr[i], arr[largest]);  // Swap root with largest
+
+        // Recursively heapify the affected sub-tree
+        heapify(arr, n, largest);
+    }
+}
+// Function to perform heap sort
+void heapSort(vector<int>& arr, int n) {
+    // Build a maxheap
+    for (int i = n / 2 - 1; i >= 0; i--)
+        heapify(arr, n, i);
+
+    // One by one extract elements from heap
+    for (int i = n - 1; i > 0; i--) {
+        // Move current root to end
+        swap(arr[0], arr[i]);
+
+        // Call max heapify on the reduced heap
+        heapify(arr, i, 0);
+    }
 }
 
 
